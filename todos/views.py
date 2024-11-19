@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView , View
+from django.views.generic import ListView, CreateView
 from .models import Todo
 from datetime import date
 from django.shortcuts import get_object_or_404, redirect
