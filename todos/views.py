@@ -22,21 +22,4 @@ class TodoCreateView(CreateView):
     success_url=reverse_lazy("todo_list")
 
 
-
-class TodoUpdateView(UpdateView):
-    model = Todo
-    fields = ['title', 'deadline']
-    success_url = reverse_lazy('todo_list')
-
-
-
-
-
-class TodoCompleteView(View):
-    def get(self, request, pk):
-        todo = get_object_or_404(Todo, pk=pk)
-        todo.finished_at = date.today()
-        todo.save()
-        return redirect("todo_list")
-
 # Create your views here.
